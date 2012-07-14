@@ -1,0 +1,73 @@
+div#header{
+	background-color: rgba(0,0,0,0.1);
+	padding-bottom: 5px;
+}
+div#nav li{
+	background-color: rgba(0,0,0,0);
+	color: black !important;
+	border: 0px;
+	text-align: left;
+	padding-right: 20px;
+}
+
+div#nav li a{
+	color: black !important;
+	text-align: left;
+}
+
+div#nav #options li a{
+	color: black !important;
+	text-align: left;
+	padding: 0;
+}
+
+div#nav ul#options li:hover a{
+	border-bottom: 3px solid #2BA6CB;
+}
+
+li#courselist{
+	float: right;
+}
+li#courselist a{
+	padding-right:0;
+}
+
+
+
+.nav-bar{
+	background-color: rgba(0,0,0,0) !important;
+}
+
+div#userbox{
+	text-align : right;
+}
+
+
+.nav-bar > li.has-flyout > a:first-child::after {
+	border: 0 !important;
+	}
+	
+	
+div#contents{
+	padding-left: 10px;
+	padding-top: 10px;
+}
+div#contents div.columns{
+	float: left !important;
+	}
+
+div.innercontents{
+	margin: 5px;
+	padding: 10px;
+	background-color: rgba(166,165,165,0.1) ;
+}
+
+div.articlepreview{
+max-height: 55px;
+	overflow: hidden;
+	}
+div.articlepreview p{
+	font-size: 12px !important;
+	line-height: 1.2 !important;
+}
+

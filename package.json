@@ -5,6 +5,7 @@
 	"dependencies": {
 		"express": "2.5.10",
 		"jade": "*",
-		"request" : "*"
+		"request" : "*",
+		"zlib" : "*"
 	}
 }

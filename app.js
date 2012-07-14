@@ -35,9 +35,9 @@ app.post('/simplify', routes.simplify);
 
 //app.post('/render', routes.render);
 
+var port = process.env.PORT || 8888;
 
-
-app.listen(8888, function(){
+app.listen(port, function(){
 	console.log("Server started listening on port %d, in %s mode", app.address().port, app.settings.env);
 });
 

@@ -81,18 +81,18 @@ function mediaPath(path, host){
 
 
 exports.index = function(req, res){
-	var courses = []
-	 for ( i in (userobject.courses)){
-	 	 courses.push(i)
-	 	for ( j in (userobject.courses[i])){
-	 	//console.log(userobject.courses[i][j].path);
-	 };
-};
 
 	res.render("index", { 	title: "SFU ENGAGE",
 							user :  userobject, 
-							courses : courses, 
 							status : "logged in" })
-
 	
+};
+
+exports.article_view = function(req, res){
+	
+	res.render("article", { title: "SFU ENGAGE",
+							user :  userobject,  
+							status : "logged in"	 })
 }
+
+

@@ -9,8 +9,8 @@ html
 		title= title
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src="http://code.jquery.com/jquery-latest.js")
-		script(src="javascripts/prettydate.js")
-		script(src="javascripts/datetime.js")
+		script(src="/javascripts/prettydate.js")
+		script(src="/javascripts/datetime.js")
 
 		link(href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700', rel='stylesheet', type='text/css')
 		meta(charset="utf-8")
@@ -21,14 +21,14 @@ html
 		
 
 		<!-- Included CSS Files -->
-		link(rel="stylesheet", href="stylesheets/foundation.css")
-		link(rel="stylesheet", href="stylesheets/app.css")
+		link(rel="stylesheet", href="/stylesheets/foundation.css")
+		link(rel="stylesheet", href="/stylesheets/app.css")
 		
 		<!--[if lt IE 9]>
-		link(rel="stylesheet", href="stylesheets/ie.css")
+		link(rel="stylesheet", href="/stylesheets/ie.css")
 		<![endif]-->
 		
-		script(src="javascripts/modernizr.foundation.js")
+		script(src="/javascripts/modernizr.foundation.js")
 		
 		<!-- IE Fix for HTML5 Tags -->
 		<!--[if lt IE 9]>
@@ -36,12 +36,43 @@ html
 		<![endif]-->
 		
 		<!-- Included JS Files -->
-		script(src="javascripts/jquery.min.js")
-		script(src="javascripts/jquery.reveal.js")
-		script(src="javascripts/jquery.orbit-1.4.0.js")
-		script(src="javascripts/jquery.customforms.js")
-		script(src="javascripts/jquery.placeholder.min.js")
-		script(src="javascripts/jquery.tooltips.js")
-		script(src="javascripts/app.js")
+		script(src="/javascripts/jquery.min.js")
+		script(src="/javascripts/jquery.reveal.js")
+		script(src="/javascripts/jquery.orbit-1.4.0.js")
+		script(src="/javascripts/jquery.customforms.js")
+		script(src="/javascripts/jquery.placeholder.min.js")
+		script(src="/javascripts/jquery.tooltips.js")
+		script(src="/javascripts/app.js")
 		
-	body!= body
+	body
+		div#header
+			div.row
+				div.ten.columns
+					h1 #{title}
+				div.two.columns#userbox
+					h5  #{ user.name }
+					a log out
+				
+			div.row.hide-for-small#nav
+				div.nine.columns
+					ul.nav-bar#options
+						li
+							a(href="#") ALL RESOURCES
+						li
+							a(href="#") YOUR CONTRIBUTIONS
+						li
+							a(href="#") STARRED
+						li
+							a(href="#") INSTRUCTOR POSTS
+				div.two.columns
+					ul.nav-bar
+						li.has-flyout#courselist
+							a(href="#") COURSES
+							a(href="#", class="flyout-toggle")
+								span
+							ul.flyout
+								each name , course in user.courses
+									li.courses
+										a(href="#") #{course}
+										
+		block content

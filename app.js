@@ -27,11 +27,11 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 
-app.get('/simplify', function(req, res){
-	res.render('index', { title: 'HTML Simplifier for SFU ENGAGE' });
-	});
+app.post('/', function(req, res){
+	res.end("article added");
+})
 
-app.post('/simplify', routes.simplify);
+app.get('/article/:id', routes.article_view);
 
 //app.post('/render', routes.render);
 

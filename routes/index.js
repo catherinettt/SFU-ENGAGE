@@ -4,6 +4,7 @@ var fs = require('fs');
 
 
 var article_1 = {
+	id : 1,
 	url : "http://www.bbc.co.uk/news/science-environment-18716300",
 	title :  "1South Korea unveils 'scientific' whaling proposal",
 	author: "Richard Black",
@@ -15,6 +16,7 @@ var article_1 = {
 }
 
 var article_2 = {
+	id : 2,
 	url : "http://blog.spoongraphics.co.uk/tutorials/how-to-create-an-abstract-geometric-mosaic-text-effect",
 	title :  "How To Create an Abstract Geometric Mosaic Text Effect",
 	author: "Chris Spooner",
@@ -26,6 +28,7 @@ var article_2 = {
 }
 
 var article_3 = {
+	id : 3,
 	url : "http://www.bbc.co.uk/news/science-environment-18716300",
 	title :  "3South Korea unveils 'scientific' whaling proposal",
 	author: "Richard Black",
@@ -38,6 +41,7 @@ var article_3 = {
 
 
 var article_4 = {
+	id : 4,
 	url : "http://www.bbc.co.uk/news/science-environment-18716300",
 	title :  "4South Korea unveils 'scientific' whaling proposal",
 	author: "Richard Black",
@@ -49,6 +53,7 @@ var article_4 = {
 }
 
 var article_5 = {
+	id : 5,
 	url : "http://www.forbes.com/sites/victorlipman/2012/06/28/how-to-interview-effectively",
 	title :  "How To Interview Effectively",
 	author: "Victor Lipman",
@@ -61,6 +66,9 @@ var article_5 = {
 	week : "3",
 	
 }
+
+
+var articles = [article_1,  article_2,  article_3,  article_4,  article_5]
 
 var userobject = {
 	name : "Catherine Tan",
@@ -89,8 +97,10 @@ exports.index = function(req, res){
 };
 
 exports.article_view = function(req, res){
+	var pickedArticle = articles[req.params.id - 1];
 	
 	res.render("article", { title: "SFU ENGAGE",
+							article : pickedArticle,
 							user :  userobject,  
 							status : "logged in"	 })
 }

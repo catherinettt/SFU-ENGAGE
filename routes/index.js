@@ -10,6 +10,8 @@ var article_1 = {
 	published_date : "4 July 2012",
 	host : "http://www.bbc.co.uk",
 	path : "/news/science-environment-18716300.html",
+	uploaded_by : "Catherine Tan",
+	uploaded_on : "May 6 2012,  12:30 PM PST"
 }
 
 var article_2 = {
@@ -19,7 +21,8 @@ var article_2 = {
 	published_date : "4 July 2012",
 	host : "http://blog.spoongraphics.co.uk",
 	path : "/news/how-to-create-an-abstract-geometric-mosaic-text-effect.html",
-	
+	uploaded_by : "Catherine Tan",
+	uploaded_on : "Jun 6 2012,  12:30 PM PST"
 }
 
 var article_3 = {
@@ -29,6 +32,8 @@ var article_3 = {
 	published_date : "4 July 2012",
 	host : "http://www.bbc.co.uk",
 	path : "/news/science-environment-18716300.html",
+	uploaded_by : "Catherine Tan",
+	uploaded_on : "July 12 2012,  12:30 PM PST"
 }
 
 
@@ -39,6 +44,8 @@ var article_4 = {
 	published_date : "4 July 2012",
 	host : "http://www.bbc.co.uk",
 	path : "/news/science-environment-18716300.html",
+	uploaded_by : "Catherine Tan",
+	uploaded_on : "July 12 2012,  12:30 PM PST"
 }
 
 var article_5 = {
@@ -48,15 +55,20 @@ var article_5 = {
 	published_date : "28 June 2012",
 	host : "http://www.forbes.com",
 	path : "/news/how-to-interview-effectively.html",
+	uploaded_by : "Catherine Tan",
+	uploaded_on : "July 15 2012,  12:30 PM PST",
+	course: "cmpt120",
+	week : "3",
+	
 }
 
 var userobject = {
 	name : "Catherine Tan",
 	id : 301078676,
 	courses : {
-		"CMPT120" : [article_1, article_2],
-		"BUS100" : [article_4],
-		"IAT200" : [article_3, article_5]
+		"CMPT 120" : [article_1, article_2],
+		"BUS 100" : [article_4],
+		"IAT 200" : [article_3, article_5, article_1]
 		}
 	}
 
@@ -84,45 +96,3 @@ exports.index = function(req, res){
 
 	
 }
-
-
-exports.simplify = function(req, res){
-	console.log(req.body.url)
-	
-	if (!req.body.url) {
-		res.render("index", {  title: titletext, errormsg : "please enter an URL" })
-		return;
-	}
-	
-	request(req.body.url, function (error, response, body) {
-		  
-		if (error){
-			console.log(error);
-			res.render('index', { title: titletext, errormsg : error });  
-		}
-		else if (response.statusCode == 200) {
-			host = response.request.host;
-			console.log("HOST: " + host);
-			jsdom.env({
-				html: body,
-				done: function(errors, window) {
-					//console.log(errors)
-					//console.log(window.document.documentElement.innerHTML)
-				
-					res.render('index', { 
-						title: titletext,  
-						article : articolize(window.document, host)
-					})
-				},
-				features: {
-					QuerySelector: true
-				}
-			});
-		
-			
-		}
-	});
-};
-
-
-

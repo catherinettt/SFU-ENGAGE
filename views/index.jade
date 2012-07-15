@@ -47,10 +47,19 @@ div.row#contents
 		each article in name
 			div.three.columns
 				div.innercontents
-					span #{coursename}
-					h5 #{article.title}
+					b #{article.uploaded_by}
+					div.post_details 
+						p Posted in 
+							span.coursename #{coursename}
+							span.post_time(id="post_time_#{counter}") 
+							
+					h5(style="height:54px;") #{article.title}
 					div.articlepreview(id = "preview_#{counter}")
 					script(type='text/javascript')
+						var now = new Date();
+						var post_time = new Date(Date.parse(" #{article.uploaded_on} "));
+						var prettytime = formatAgo(post_time, null, now);
+						$('span#post_time_#{counter}').append(prettytime);
 						$('div#preview_#{counter}').load("#{article.path} p");
 					
 					- counter = counter +1	

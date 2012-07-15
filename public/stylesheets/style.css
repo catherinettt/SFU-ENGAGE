@@ -19,6 +19,7 @@ div#nav #options li a{
 	color: black !important;
 	text-align: left;
 	padding: 0;
+	
 }
 
 div#nav ul#options li:hover a{
@@ -34,9 +35,12 @@ li#courselist a{
 
 
 
-.nav-bar{
+#header .nav-bar{
+	margin-top: 5px !important;
 	background-color: rgba(0,0,0,0) !important;
 }
+
+
 
 div#userbox{
 	text-align : right;
@@ -52,6 +56,12 @@ div#contents{
 	padding-left: 10px;
 	padding-top: 10px;
 }
+
+div#contents div.columns{
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 6px;
+}
 div#contents div.columns:last-child{
 	float: left !important;
 	}
@@ -63,7 +73,7 @@ div.innercontents{
 }
 
 div.innercontents:hover{
-	background-color: rgba(43,166,203,0.5) ;
+	background-color: rgba(43,166,203,0.1) ;
 	-webkit-transition: all 300ms linear;
 	-moz-transition: all 300ms linear;
 	-o-transition: all 300ms linear;
@@ -72,7 +82,7 @@ div.innercontents:hover{
 	}
 
 div.articlepreview{
-max-height: 55px;
+	max-height: 55px;
 	overflow: hidden;
 	}
 div.articlepreview p{
@@ -92,3 +102,18 @@ div.submit{
 	margin-right: 10px;
 	margin-top: 2px;
 }
+
+div.post_details p{
+	font-size:12px !important;
+	padding-top: 2px;
+}
+
+div.post_details span.coursename{
+	border: 1px solid black;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+div.post_details span.coursename:hover{
+	cursor: pointer;
+	}

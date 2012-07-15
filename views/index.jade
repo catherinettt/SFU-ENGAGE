@@ -28,6 +28,19 @@ div#header
 							li.courses
 								a(href="#") #{i}
 div.row#contents
+	div.three.columns
+		div.innercontents
+			form(name="add_article", action="/",enctype="multipart/form-data", method="post", onsubmit="return validateForm()", style="margin-bottom : 0", class="custom")
+				label Share a resource!
+				input(name="article_url",type="text", id="article_url", placeholder="http://")
+				input(name="article_comment", type="text", id="article_comment", placeholder="Type in a comment")
+				div.row
+					div.selectcourse
+						select(class="customDropdown", name="article_course", value="select a course")
+							each i in courses
+								option #{i}
+					div.submit
+						input(type="submit", value="add", class="small button")
 	- var counter = 0 
 	each name , course in user.courses
 		- var coursename = course

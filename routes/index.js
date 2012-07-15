@@ -13,12 +13,12 @@ var article_1 = {
 }
 
 var article_2 = {
-	url : "http://www.bbc.co.uk/news/science-environment-18716300",
-	title :  "2South Korea unveils 'scientific' whaling proposal",
-	author: "Richard Black",
+	url : "http://blog.spoongraphics.co.uk/tutorials/how-to-create-an-abstract-geometric-mosaic-text-effect",
+	title :  "How To Create an Abstract Geometric Mosaic Text Effect",
+	author: "Chris Spooner",
 	published_date : "4 July 2012",
-	host : "http://www.bbc.co.uk",
-	path : "/news/science-environment-18716300.html",
+	host : "http://blog.spoongraphics.co.uk",
+	path : "/news/how-to-create-an-abstract-geometric-mosaic-text-effect.html",
 	
 }
 

@@ -28,9 +28,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 
-app.post('/', function(req, res){
-	res.end("article added");
-})
+app.post('/', routes.index);
 
 app.get('/article/:id', routes.article_view);
 
